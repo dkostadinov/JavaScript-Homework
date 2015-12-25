@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			label {
+				width: 150px;
+				margin: 5px;
+				display:block;
+			}
+			input {
+				margin: 5px;
+				
+			}
+			
+			button {
+				margin: 5px;
+			}
+		</style>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+
+	</head>
+	
+	<body>
+		<form name="myform" action="" method="get" onsubmit="return false">
+		
+			<label for="radius" >Radius:</label>
+				<input type="text"  id="radius"/> <br />
+				
+			<label for="volume" >Volume:</label>
+				<input type="text"  id='volume'/> <br />
+				
+				
+			<p id="p"></p>
+				
+			<button type="submit" onClick="validate()">Calculate</button>	
+		
+		</form>
+		
+			<script type="text/javascript">
+		
+			function validate() {
+				var input = document.getElementById('radius').value;
+				
+				var volume = Math.pow(input,3) * Math.PI * 4/3;
+				document.getElementById('volume').value = volume;
+			}
+
+		
+		</script>
+	
+	</body>
+
+</html>

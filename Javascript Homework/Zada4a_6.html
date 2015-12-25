@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+		<body>
+			<div id="container"></div>
+		</body>
+		
+		<script type="text/javascript">
+		
+			
+			img = document.createElement('img');
+			var images = ['Dipsy_1.jpeg','Lala_2.jpeg','Po_3.jpg','tinky_winky_4.png'];
+			var random = Math.floor(Math.random() * images.length);				
+			img.src = "images_7/" + images[random];
+			div = document.getElementById('container');
+			div.appendChild(img);	
+		
+			</script>
+</html>

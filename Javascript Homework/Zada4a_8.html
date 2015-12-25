@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+		<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+		
+			<style>
+				table{
+					border: 1px solid black;
+					border-width: 2px;
+					padding: 2px;
+					border-collapse: separate;
+				}
+			
+			
+			
+			</style>
+		</head>
+		
+			<body>
+			
+				<table id="mytable">
+					<tr><th>This</th><th>is</th><th>an</th><th>example</th></tr>
+					<tr><td>Table data</td></tr>
+					<tr><td>Table data</td></tr>
+					<tr><td>Table data</td></tr>
+				
+				</table>
+				
+				<button type="button" id="addRow"  onclick="addrow()">Add row</button>
+			
+			
+			</body>
+			
+			<script type="text/javascript">
+
+				function addrow() {
+					var	table = document.getElementById('mytable');
+					var	newRow = document.createElement('tr');
+					var newData = document.createElement('td');
+					table.appendChild(newRow);
+					newRow.appendChild(newData);
+					newData.innerHTML = "Table data";
+				}
+			
+			</script>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+		<head>
+		<meta charset="ISO-8859-1">
+		<title>Insert title here</title>
+		</head>
+		
+		
+		<body>
+		
+			<form action="" method="get" onsubmit="return false">	
+			
+				<label for="weight">Convert </label>
+					<input type="text" id="weight"/>
+				<select id="FirstSelectBox">
+					<option value="1" id = "first">kg</option>	
+					<option value="2">lb</option>
+				
+				</select>
+				
+				<select id="SecondSelectBox">
+					<option value="3" id="second">lb</option>
+					<option value="4">kg</option>
+				
+				</select>	
+				
+				<button type="submit"   onclick="calculate()">Calculate </button>
+				<button type="reset" onClick = "window.location.reload()">Reset</button>;
+			</form>	
+			<div id="resdiv">
+			<p id="result"></p>
+			</div>
+			
+		</body>
+		
+		<script type="text/javascript">
+		
+			
+			
+			function calculate() {
+				
+			
+				var x = document.getElementById('FirstSelectBox');
+				var z = x.options[x.selectedIndex].value;
+				
+				var a = document.getElementById('SecondSelectBox');
+				var b = a.options[a.selectedIndex].value;
+				
+				if(z == 1 && b == 3){
+	
+						var input = document.getElementById('weight').value;
+						
+						var result = input * 2.20462262;
+						
+						var p = document.getElementById('result');
+						
+						var text = document.createTextNode(result + " lb"); 
+						
+						p.appendChild(text);
+						
+						var element = document.getElementById('resdiv');
+						
+						element.appendChild(p);
+
+				}
+				
+				
+				
+				else if(z == 2 && b == 4) {
+	
+						var input = document.getElementById('weight').value;
+						
+						var result = input / 2.20462262;
+						
+						var p = document.getElementById('result');
+						var text = document.createTextNode(result + " kg"); 
+						p.appendChild(text);
+						
+						element = document.getElementById('resdiv');
+						
+						element.appendChild(p);
+					
+					
+				}
+				
+				else {
+					alert('Try again');
+				}
+			}
+			
+			
+			
+			
+			
+		
+		</script>
+</html>

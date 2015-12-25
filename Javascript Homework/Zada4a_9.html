@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	
+		<script type="text/javascript">
+			function attribute() {
+				var imgs = document.getElementsByTagName('img');
+				var count = imgs.length;
+				for(var i = 0;i < count;i++){
+					imgs[i].setAttribute('onmouseover',"bigSize(this)");
+					imgs[i].setAttribute('onmouseout',"normSize(this)");
+				}
+			}
+			
+		
+			function bigSize(size) {
+				size.style.width = "400px";
+				size.style.height = "400px";
+			}
+			
+			function normSize(size) {
+				size.style.width = "200px";
+				size.style.height = "200px";
+			}
+		
+		
+		
+		
+		</script>
+	
+		<style type="text/css">
+		
+			#imgContainer {
+				width: 1200px;
+				height: 1200px;
+				position: relative;
+				margin: 300px 500px 300px 500px;
+				display: inline-block;
+			}
+			
+			img {
+				width: 200px;
+				heigth: 200px;
+				
+			}
+		
+		</style>
+	</head>
+	
+	<body onload="attribute()">
+		<div id="imgContainer">
+			<img src="images_9/angelina.jpg" />
+			<img src="images_9/bird.jpg"  />
+			<img src="images_9/tiger.jpg"  />
+			<img src="images_9/turtle.jpg"/>
+			<img src="images_9/cool_dog.jpg" />
+			<img src="images_9/house.jpg" />
+		</div>
+	</body>
+</html>

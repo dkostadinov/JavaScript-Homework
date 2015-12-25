@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="ISO-8859-1">
+	<title>Insert title here</title>
+	
+		<style type="text/css">
+			label {
+				margin-left: 20px;
+					
+			}
+			input {
+				display:block;
+				margin: 0px 0px 20px 20px;
+			}
+			
+			form {
+				margin: 50px;
+				background-color: #80BBCF;
+				width: 500px;
+				padding: 50px;
+			}
+			button {
+				margin: 20px;
+			}
+			
+			#other {
+				display:none;
+			}
+		
+		
+		</style>
+	</head>
+	
+	<body>
+		<form id="myform" action="" method="get" onsubmit="return false" >
+		
+				<p id="error"></p>
+				
+			<label for="userid">Username:</label>
+				<input type="text" id="username"/>
+			
+			<label for="password">Password:</label>
+				<input type="password" id="password"/>	
+			
+			
+			<label for="firstname">First Name:</label>
+				<input type="text" id="firstname"/>
+				
+			<label for="lastname">Last Name:</label>
+				<input type="text" id="lastname"/>
+				
+			<label for="email">E-mail:</label>
+				<input type="text" id="email" />
+					
+			<label for="phone">Phone Number:</label>
+				<input type="text" id="phone"/>
+			
+			<label for="address">Home Address:</label>
+				<input type="text"  id="address"/>
+				
+			<label for="country">Country:</label>
+				<select name="" id="country" style="width:110px;" onchange="otherCountry(this.value)">
+				
+					<option value="Bulgaria">Bulgaria</option>
+					<option value="Germany">Germany</option>
+					<option value="UK">UK</option>
+					<option value="Italy">Italy</option>
+					<option value="France">France</option>
+					<option value="Other" id="otherCountry">Other</option>
+
+				</select><br /><br />
+				<div id="other">
+				<label for="otherCountry">Select a country:</label>
+				<input type="text"/>
+				</div>
+			<button type="submit" onclick="validate(this)">Submit</button>
+		</form>
+		
+		
+	</body>
+		<script type="text/javascript">
+			
+			
+			function validate(form) {
+				
+				var username = document.getElementById('username');
+				var p = document.getElementById('error');
+				if(username.value.length == 0){
+					username.style.backgroundColor = "#C47479";
+					p.style.color = "red";
+					p.innerHTML = "You must pick a username!";
+				
+	
+				}
+				else {
+					username.style.backgroundColor = "white";
+					p.innerHTML = "";
+				}
+				
+				var password = document.getElementById('password');
+				
+				if(password.value.length < 6){
+					password.style.backgroundColor = "#C47479";
+					p.style.color = "red";
+					p.innerHTML += "<br />Your password must be at least 6 characters long!";
+				
+					
+				}
+				else {
+					password.style.backgroundColor = "white";
+					p.innerHTML += "";
+				}
+				
+				var firstname = document.getElementById('firstname');
+				
+				if(firstname.value.length == 0){
+					firstname.style.backgroundColor = "#C47479";
+					p.style.color = "red";
+					p.innerHTML += "<br />You must enter your firstname!";
+					
+					
+				}
+				else {
+					firstname.style.backgroundColor = "white";
+					p.innerHTML += "";
+				}
+				
+				var lastname = document.getElementById('lastname');
+				
+				if(lastname.value.length == 0){
+					lastname.style.backgroundColor = "#C47479";
+					p.style.color = "red";
+					p.innerHTML += "<br />You must enter your lastname!";
+				
+					
+				}
+				else {
+					lastname.style.backgroundColor = "white";
+					p.innerHTML += "";
+				}
+				
+				var email = document.getElementById('email');
+				
+				if(email.value.length == 0){
+					email.style.backgroundColor = "#C47479";
+					p.style.color = "red";
+					p.innerHTML += "<br />You must enter your email!";
+				}
+				else {
+					email.style.backgroundColor = "white";
+					p.innerHTML += "";
+				}
+				
+				var phone = document.getElementById('phone');
+				
+				if(phone.value.length == 0){
+					phone.style.backgroundColor = "#C47479";
+					p.style.color = "red";
+					p.innerHTML += "<br />You must enter your phone!";
+				}
+				else {
+					phone.style.backgroundColor = "white";
+					p.innerHTML += "";
+				}
+				
+				var address = document.getElementById('address');
+				
+				if(address.value.length == 0){
+					address.style.backgroundColor = "#C47479";
+					p.style.color = "red";
+					p.innerHTML += "<br />You must enter your address!";
+				}
+				else {
+					address.style.backgroundColor = "white";
+					p.innerHTML += "";
+				}
+				
+			}
+		
+			function otherCountry(selected) {
+				var element = document.getElementById('other');
+				if(selected == 'Other') {
+					element.style.display = 'block';
+				}
+				
+				else {
+					element.style.display = 'none';
+				}
+			}
+		
+		</script>
+</html>

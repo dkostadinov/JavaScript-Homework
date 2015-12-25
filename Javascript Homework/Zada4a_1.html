@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+var arr = [3,'a','a','a',2,3,'a',3,'a',2,4,9,3];
+
+var counter = 0;
+var mostCommonSymb = 0;
+var temp = '';
+
+for(var i = 0;i < arr.length - 1; i++){
+	if (arr[i] === arr[i + 1]){
+		counter++;
+	}
+	else {
+		counter == 0;
+	}
+	
+	if( counter > mostCommonSymb) {
+		mostCommonSymb = counter;
+		temp = arr[i];
+	}
+	if(arr[i] == temp && arr[i] !== arr[i + 1]) {
+		mostCommonSymb++;
+	}
+}
+
+console.log(temp,"(" + mostCommonSymb + " times)");
+
+
+</script>
+
+</body>
+</html>
